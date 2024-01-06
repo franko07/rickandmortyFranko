@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  background-image: url("./components/images/fondo.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: auto;
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: "Myfont";
+  src: local("Myfont"),
+    url(./components/fonts/TT\ Phobos\ Trial\ Bold.otf) format("opentype");
+}
+
+.divFontGeneral {
+  font-family: "Myfont";
+  font-size: 15px;
+}

@@ -1,0 +1,153 @@
+.divGeneral {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(161, 231, 166, 0.5);
+  border-radius: 1.5rem;
+  border-style: solid;
+  border-color: #f3f6f3;
+  -webkit-box-shadow: 1px 2px 20px 0px rgba(46, 127, 51, 1);
+  -moz-box-shadow: 1px 2px 20px 0px rgba(46, 127, 51, 1);
+  box-shadow: 1px 2px 20px 0px rgba(46, 127, 51, 1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+}
+.izquierda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.derecha {
+  flex: 1;
+  color: white;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.buttonBackStyle {
+  background-color: #0c0c0cc8;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  border-radius: 10px;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonBackStyle:hover {
+  opacity: 1;
+}
+
+.image {
+  width: 280px;
+  margin-right: 10px;
+  margin-left: 20px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #121211c8;
+}
+
+.buttonSocials1 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+.buttonSocials2 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  height: 45px;
+  width: 45px;
+  margin-left: 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.pfranco {
+  color: black;
+  font-size: 25px;
+}
+
+.pFullStack {
+  color: #0a0a0ac8;
+  font-size: 25px;
+}
+
+.pApp {
+  font-size: 20px;
+  color: black;
+}
+
+.tool {
+  height: 50px;
+  width: 50px;
+}
+
+@media (max-width: 768px) {
+  .divGeneral {
+    padding: 10px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image {
+    width: 180px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0px;
+  }
+
+  .botones {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .pNatalia {
+    font-size: 20px;
+  }
+
+  .pFullStack {
+    font-size: 20px;
+  }
+
+  .pApp {
+    font-size: 16px;
+    margin-top: 0px;
+  }
+
+  .tool {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 0px;
+  }
+  .derecha {
+    margin-top: 20px;
+  }
+
+  .izquierda {
+    margin-right: 0px;
+  }
+}

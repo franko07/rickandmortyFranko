@@ -1,0 +1,85 @@
+.divGeneral {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(46, 127, 51, 0.5);
+  border-radius: 1.5rem;
+  border-style: solid;
+  border-color: #2e7f33;
+  -webkit-box-shadow: 1px 2px 20px 0px rgba(46, 127, 51, 1);
+  -moz-box-shadow: 1px 2px 20px 0px rgba(46, 127, 51, 1);
+  box-shadow: 1px 2px 20px 0px rgba(46, 127, 51, 1);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.imgName {
+  color: black;
+}
+
+.image {
+  width: 380px;
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 200px;
+  border-style: solid;
+  border-color: #0f0f0fc8;
+}
+
+.image:hover {
+  transform: scale(1.05);
+  -webkit-box-shadow: 1px 2px 20px 0px rgba(136, 254, 3, 1);
+  -moz-box-shadow: 1px 2px 20px 0px rgba(136, 254, 3, 1);
+  box-shadow: 1px 2px 20px 0px rgba(136, 254, 3, 1);
+}
+
+.info {
+  flex: 1;
+}
+
+.h2 {
+  color: black;
+}
+
+.buttonBackStyle {
+  background-color: #0a0a09c8;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  border-radius: 10px;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonBackStyle:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .divGeneral {
+    display: flex;
+    padding: 10px;
+    border-radius: 0;
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .image {
+    width: 180px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+}
