@@ -2,7 +2,7 @@ import axios from "axios";
 
 const initialState = {
   myFavorites: [],
-  allCharacters: [],
+  characters: [],
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -11,6 +11,16 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state, myFavorites: payload, allCharacters: payload };
     case "REMOVE_FAV":
       return { ...state, myFavorites: payload };
+    case "GET_ALL_CHARS":
+        return {
+          ...state,
+          characters: payload,
+        };
+        case "ADD_CHARACTER":
+          return {
+            ...state,
+            characters: [...state.characters, payload],
+          };
     // case "DELETE_CHARACTER":
     //   return {
     //     ...state,

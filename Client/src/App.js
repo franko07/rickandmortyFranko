@@ -1,10 +1,7 @@
 import "./App.css";
-//import Card from "./components/Card.jsx";
 import Cards from "./components/Cards/Cards";
-//import SearchBar from "./components/SearchBar.jsx";
-// import img1 from "./components/images/rick.jpg";
 import Nav from "./components/Nav/Nav";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; // Agrega useState aquí
 import { Routes, Route } from "react-router-dom";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
@@ -13,16 +10,23 @@ import Form from "./components/Form/Form";
 import { useLocation, useNavigate } from "react-router-dom";
 import Favorites from "./components/Favorites/Favorites";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllChars } from "./redux/actions";
 
 function App() {
-  const [characters, setCharacters] = useState([]);
   const location = useLocation();
-  const [access, setAccess] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const characters = useSelector((state) => state.characters);
+  const [access, setAccess] = useState(false);
 
   useEffect(() => {
     !access && navigate("/");
   }, [access, navigate]);
+
+  useEffect(() => {
+    dispatch(getAllChars());
+  }, [dispatch]);
 
   async function onSearch(id) {
     try {
@@ -35,7 +39,7 @@ function App() {
         if (exists) {
           window.alert("El personaje ya fue agregado");
         } else {
-          setCharacters((oldChars) => [...oldChars, data]);
+          dispatch({ type: "ADD_CHARACTER", payload: data });
         }
       } else {
         window.alert("No hay personajes con ese ID");
@@ -46,10 +50,7 @@ function App() {
   }
 
   function onClose(id) {
-    const filteredChar = characters.filter(
-      (character) => character.id !== parseInt(id)
-    );
-    setCharacters(filteredChar);
+    dispatch({ type: "REMOVE_CHARACTER", payload: id });
   }
 
   function onRandom() {
@@ -78,13 +79,12 @@ function App() {
   }
 
   return (
-    <body className="App" style={{ padding: "20px" }}>
+    <div className="App" style={{ padding: "20px" }}>
       <div>
         <div className="divFontGeneral">
           {location.pathname !== "/" && (
             <Nav onSearch={onSearch} onRandom={onRandom} logOut={logOut} />
           )}
-          {/*{ location.pathname !== "/" ? <NavBar onSearch={onSearch} random={random} logout={logout}/> : undefined} */}
           <Routes>
             <Route path="/" element={<Form login={login} />}></Route>
             <Route
@@ -98,7 +98,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

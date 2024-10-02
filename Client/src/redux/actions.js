@@ -30,6 +30,21 @@ export const removeFav = (id) => {
   };
 };
 
+export const getAllChars = () => {
+  const endpoint = "http://localhost:3001/rickandmorty/characters";
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(endpoint);
+      return dispatch({
+        type: "GET_ALL_CHARS",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export function filterCards(gender) {
   return { type: "FILTER", payload: gender };
 }
